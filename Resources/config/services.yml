@@ -1,0 +1,17 @@
+services:
+#    web_soft_lety_shops.xml_data_provider:
+#        class: WebSoft\Bundle\LetyShopsBundle\Providers\XmlFileProvider
+#        calls:
+#            - [setEntityManager, [@doctrine.orm.default_entity_manager]]
+#        tags:
+#            - { name: web_soft_lety_shops.provider }
+
+    web_soft_lety_shops.csv_data_provider:
+        class: WebSoft\Bundle\LetyShopsBundle\Providers\CsvFileProvider
+        calls:
+            - [setEntityManager, [@doctrine.orm.default_entity_manager]]
+        tags:
+            - { name: web_soft_lety_shops.provider }
+
+    web_soft_lety_shops.provider_manager:
+        class: WebSoft\Bundle\LetyShopsBundle\Providers\ProviderManager
